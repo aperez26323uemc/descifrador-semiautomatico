@@ -83,7 +83,7 @@ def main():
     texto_resultado = bucle_descifrado(texto_cifrado, frecuencia)
 
     with open("resultado.txt", 'w') as resultado:
-        resultado.write(texto_auxiliar)
+        resultado.write(texto_resultado)
 
 if __name__ == "__main__":
     main()
