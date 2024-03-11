@@ -51,7 +51,7 @@ def letter_swapper(texto) -> str:
 
     texto_resultado = ""
     for letra in texto:
-        if letra == letra_sustituible:
+        if letra.islower() and letra == letra_sustituible:
             letra = letra_sustituta
         texto_resultado += letra
     
