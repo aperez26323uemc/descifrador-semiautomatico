@@ -57,21 +57,6 @@ def letter_swapper(texto) -> str:
     
     return texto_resultado
 
-def cambio_frecuencia(texto, frecuencia):
-    letra_sustituta_dict = dict(LETRAS_ORDENADAS_FRECUENCIA)
-    texto_resultado = ""
-
-    for letra in texto:
-        if letra.upper() in letra_sustituta_dict:
-            letra_sustituta = letra_sustituta_dict[letra.upper()]
-            if letra.islower():
-                letra_sustituta = letra_sustituta.lower()
-            texto_resultado += letra_sustituta
-        else:
-            texto_resultado += letra
-
-    return texto_resultado
-
 def bucle_descifrado(texto, frecuencia) -> str:
     empezar = True
     while empezar:
@@ -80,11 +65,10 @@ def bucle_descifrado(texto, frecuencia) -> str:
         while continuar:
             print(texto_auxiliar)
             print(f"La frecuencia original de las letras es:\n{frecuencia}")
-            texto_auxiliar = cambio_frecuencia(texto_auxiliar, frecuencia)
+            texto_auxiliar = letter_swapper(texto_auxiliar)
             continuar = (input("\nDesea continuar? (Y/N) ").upper() == "Y")
         
         empezar = (input("\nDesea volver a empezar? (Y/N) ").upper() == "Y")
-        
     return texto_auxiliar
 
 def main():
